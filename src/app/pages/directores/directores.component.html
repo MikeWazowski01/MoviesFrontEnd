@@ -1,0 +1,58 @@
+<div>
+    <div>
+        <h2><button mat-icon-button (click)="addDirector()">
+                <mat-icon class="icon-blue">add_circle</mat-icon>
+            </button> Agregar Director</h2>
+    </div>
+</div>
+<div class="card-container">
+    <div class="table">
+        <mat-table matSort [dataSource]="dataSource">
+
+            <ng-container matColumnDef="actions">
+                <mat-header-cell *matHeaderCellDef
+                    style="width: 110px;">Opciones</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                    <button title="Edit" mat-icon-button (click)="editDirector(element)">
+                        <mat-icon class="icon-blue">edit</mat-icon>
+                    </button>
+
+                    <button title="Delete" mat-icon-button (click)="deleteDirector(element)">
+                        <mat-icon class="icon-movie-delete">delete</mat-icon>
+                    </button>
+                </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="idDirector">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>No.</mat-header-cell>
+                <mat-cell *matCellDef="let director">{{ director.idDirector }}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="name">
+                <mat-header-cell *matHeaderCellDef style="width: 200px;" mat-sort-header>Nombre</mat-header-cell>
+                <mat-cell *matCellDef="let director" style="width: 200px;">{{ director.name }}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="nationality">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Nacionalidad</mat-header-cell>
+                <mat-cell *matCellDef="let director">{{ director.nationality }}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="age">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Edad</mat-header-cell>
+                <mat-cell *matCellDef="let director">{{ director.age }}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="active">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Activo</mat-header-cell>
+                <mat-cell *matCellDef="let director">
+                    {{ director.active ? 'Sí' : 'No' }}
+                </mat-cell>
+            </ng-container>
+
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+    </div>
+
+</div>

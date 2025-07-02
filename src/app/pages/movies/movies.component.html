@@ -1,0 +1,51 @@
+<div style="padding-top:10px;position: relative;  z-index: 1;">
+  <div style="display: inline-block;padding-right: 100px; padding-bottom: 0px!important;">
+    <h2><button mat-icon-button (click)="agregarMovie()">
+        <mat-icon class="icon-blue">add_circle</mat-icon>
+      </button> Agregar Movies</h2>
+  </div>
+  <div style=" display: inline-block;">
+    <form action="">
+      <mat-form-field appearance="outline" style="width: 250px;">
+        <mat-label style="padding-top: -10px;">Director</mat-label>
+        <mat-select [(ngModel)]="idDirector" name="director"  (selectionChange)="buscarMoviDirector()">
+          @for(director of IDirector;track director){
+          <mat-option [value]="director.idDirector">{{director.name}}</mat-option>
+          }
+        </mat-select>
+
+      </mat-form-field>
+    </form>
+  </div>
+  <!--<div style=" display: inline-block;padding-left: 20px;">
+    <button mat-raised-button class="bntAgregar" type="submit" (click)="buscarMoviDirector()">Buscar</button>
+  </div>!-->
+</div>
+<div class="card-container">
+  @if(IMovies.length > 0){
+    @for(movie of IMovies;track movie){
+    <mat-card class="card-movies">
+      <mat-card-title class="card-title">{{ movie.name | uppercase }}</mat-card-title>
+      <mat-card-content>
+        <p><span style="font-weight: bold!important;">Año: </span> {{ movie.release_year | date:'yyyy' }}</p>
+        <p><span style="font-weight: bold!important;">Género: </span> {{ movie.gender }}</p>
+        <p><span style="font-weight: bold!important;">Duración: </span>{{ movie.duration }}</p>
+        <p><span style="font-weight: bold!important;">Director: </span>{{ movie.nombreDirector }}</p>
+
+      </mat-card-content>
+      <mat-card-actions>
+        <button class="btnMovies" mat-icon-button (click)="deleteMovie(movie)">
+          <mat-icon class="icon-movie-delete">delete</mat-icon>
+        </button>
+        <button class="btnMovies" mat-icon-button (click)="editMovie(movie)">
+          <mat-icon class="icon-menu">edit</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+    }
+  }@else {
+    <div style="align-self: center;width: 100%;text-align: center;">
+      <h2>No hay registros</h2>
+    </div>
+  }
+</div>

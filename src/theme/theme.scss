@@ -1,0 +1,153 @@
+mat-card {
+    padding-top: 20px;
+    padding-left: 50px;
+    height: 350px;
+}
+
+.toolbar-agregar {
+    margin-top: -10px !important;
+    background: #0052cc !important;
+}
+
+h2 {
+    color: black !important;
+}
+
+.icon-white {
+    color: white;
+}
+
+.bntAgregar {
+    background: #0052cc !important;
+    color: white !important;
+    width: 100%;
+    margin-left: -20px;
+}
+
+::ng-deep .mat-mdc-form-field-subscript-wrapper,
+.mat-mdc-form-field-bottom-align::before {
+    font-size: 10px !important;
+    line-height: 0px !important
+}
+
+mat-form-field,
+mat-checkbox {
+    width: 80%;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+/*Agregar*/
+.card-container {
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    border: 1px solid #ccc;
+    height: 500px;
+    overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: flex-start;
+}
+
+.icon-movie-delete {
+    color: red !important;
+}
+
+
+
+.icon-blue {
+    color: #0052cc;
+    ;
+}
+
+/*home*/
+.icon-menu {
+    color: white;
+}
+
+.btnMenu {
+    background: transparent !important;
+    border: none;
+}
+
+/*Editar*/
+mat-card {
+    padding-top: 20px;
+    padding-left: 50px;
+    height: 350px;
+}
+
+.titulo {
+    color: white !important;
+}
+
+mat-icon {
+    color: white;
+}
+
+.bntAgregar {
+    background: #0052cc !important;
+    color: white !important;
+    width: 100%;
+    margin-left: -20px;
+}
+
+::ng-deep .mat-mdc-form-field-subscript-wrapper,
+.mat-mdc-form-field-bottom-align::before {
+    font-size: 10px !important;
+    line-height: 0px !important
+}
+
+mat-form-field,
+mat-checkbox {
+    width: 80%;
+}
+
+/*Movies*/
+.bntAgregar {
+    padding-left: 30px;
+    border-radius: 5px;
+    background-color: #0052cc !important;
+    color: white !important;
+}
+
+p {
+    display: block;
+    margin-block-start: 5px;
+    margin-block-end: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+    font-size: 10px;
+}
+
+.btnMovies {
+    background: #0052cc !important;
+    border-radius: 0px !important;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-right: 0px;
+    margin-top: 10px;
+    margin-right: 50px;
+}
+
+.card-movies {
+    padding-top: 20px !important;
+    padding-left: 10px !important;
+    width: 200px;
+    height: 180px !important;
+}
+
+.card-title {
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: -10px !important;
+    text-align: center;
+}

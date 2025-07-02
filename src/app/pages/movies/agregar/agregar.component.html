@@ -1,0 +1,46 @@
+<mat-toolbar>
+    <mat-toolbar-row>
+        <span style="flex: 1 1 auto;"></span>
+        <h2 class="titulo">Registrar Movie</h2>
+        <span style="flex: 1 1 auto;"></span>
+        <button (click)="closeDialog()" mat-icon-button>
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-toolbar-row>
+</mat-toolbar>
+<mat-card>
+    <form [formGroup]="movieForm" (ngSubmit)="guardarMovie()">
+        <mat-form-field appearance="outline">
+            <mat-label>Nombre</mat-label>
+            <input matInput formControlName="name">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Año de Estreno</mat-label>
+            <input matInput type="date" formControlName="release_year">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Género</mat-label>
+            <input matInput formControlName="gender">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Duración</mat-label>
+            <input matInput formControlName="duration"  placeholder="hh:mm">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Select</mat-label>
+            <mat-select formControlName="idDirector">
+                @for(director of IDirector;track director){
+                    <mat-option value="{{director.idDirector}}">{{director.name}}</mat-option>
+                }
+
+            </mat-select>
+
+        </mat-form-field>
+
+        <button mat-raised-button class="bntAgregar" type="submit" [disabled]="!this.movieForm.valid">Guardar</button>
+    </form>
+</mat-card>

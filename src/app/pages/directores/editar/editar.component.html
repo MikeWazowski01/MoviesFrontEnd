@@ -1,0 +1,32 @@
+<mat-toolbar class="toolbar-agregar">
+    <mat-toolbar-row>
+        <span class="spacer"></span>
+        <h2 class="titulo">Editar Director</h2>
+        <span class="spacer"></span>
+        <button (click)="closeDialog()" mat-icon-button>
+            <mat-icon class="icon-white">close</mat-icon>
+        </button>
+    </mat-toolbar-row>
+</mat-toolbar>
+<mat-card>
+    <form [formGroup]="directorForm" (ngSubmit)="editarDirector()">
+        <mat-form-field appearance="outline">
+            <mat-label>Nombre</mat-label>
+            <input matInput formControlName="name">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Nationality</mat-label>
+            <input matInput formControlName="nationality">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Age</mat-label>
+            <input type="number" matInput formControlName="age"  placeholder="Age">
+        </mat-form-field>
+
+         <mat-checkbox formControlName="active">Activo</mat-checkbox>
+
+        <button mat-raised-button class="bntAgregar" type="submit">Guardar</button>
+    </form>
+</mat-card>

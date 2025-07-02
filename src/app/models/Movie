@@ -1,0 +1,9 @@
+export interface IMovie {
+  idMovie: number;
+  idDirector: number;
+  name: string;
+  releaseYear: string;
+  gender: string;
+  duration: string;
+  directorName?: string; 
+}

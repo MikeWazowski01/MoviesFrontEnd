@@ -1,0 +1,27 @@
+<mat-toolbar>
+  <span>Mis Movies</span>
+  <span class="spacer"></span>
+
+  <button class="btnMenu" mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon class="icon-menu">menu</mat-icon>
+  </button>
+
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/inicio">
+      <mat-icon class="icon">home</mat-icon>
+      <span>Inicio</span>
+    </button>
+    <button mat-menu-item routerLink="/movies">
+      <mat-icon class="icon">movie</mat-icon>
+      <span>Películas</span>
+    </button>
+    <button mat-menu-item routerLink="/director">
+      <mat-icon class="icon">person</mat-icon>
+      <span>Directores</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>
+
+<div class="contenido">
+  <router-outlet></router-outlet>
+</div>

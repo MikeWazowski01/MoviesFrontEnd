@@ -1,0 +1,29 @@
+/*usado*/
+::ng-deep .mat-mdc-menu-content {
+    margin: 0;
+    padding: 8px 0;
+    outline: 0;
+    background: #0052cc !important;
+}
+
+.icon{
+    color:white!important;
+}
+mat-toolbar {
+    background: #0052cc !important;
+    color: var(--mat-toolbar-container-text-color, var(--mat-sys-on-surface));
+    height: 35px !important;
+    position: fixed;
+}
+.titulo {
+    padding-top: 10px;
+    color: white;
+}
+
+span{
+    color:white;
+}
+.contenido{
+    padding: 20px;
+}
+/*Fin usados*/

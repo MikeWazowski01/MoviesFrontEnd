@@ -1,0 +1,27 @@
+mat-card{
+    padding-top: 20px;
+    padding-left: 100px;
+    height: 450px;
+}
+mat-toolbar{
+    margin-top: -10px;
+    background: #0052cc !important;
+}
+h2{
+    color:white;
+}
+mat-icon{
+    color: white;
+}
+
+.bntAgregar{
+    background: #0052cc!important;
+    color:white!important;
+    width: 100%;
+    margin-left: -50px;
+}
+
+::ng-deep .mat-mdc-form-field-subscript-wrapper, .mat-mdc-form-field-bottom-align::before {
+    font-size: 10px!important;
+    line-height:0px!important
+}
