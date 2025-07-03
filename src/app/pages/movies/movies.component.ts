@@ -14,6 +14,7 @@ import { AgregarComponent } from './agregar/agregar.component';
 import { EditarComponent } from './editar/editar.component';
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
+import { Console } from 'node:console';
 
 @Component({
   selector: 'app-movies',
@@ -47,6 +48,9 @@ export class MoviesComponent {
   getDirectores() {
     this.movieServices.HttpGet("https://localhost:7095/api/Director/get-list-activos-directores").subscribe((data) => {
       this.IDirector = data;
+      if(data.length == 0){
+          this.openSnackBar('No hay registros de Directores Agregue primero un director', 'Salir');
+      }
     });
   }
 
@@ -106,7 +110,7 @@ export class MoviesComponent {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      this.idDirector=0;
+      this.idDirector = result;
       this.buscarMoviDirector();
     });
   }

@@ -7,9 +7,10 @@ import { MatInputModule } from '@angular/material/input';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MovieService } from '../../../services/movie.service';
 import { MatIconModule } from '@angular/material/icon';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Console } from 'node:console';
 
 @Component({
   selector: 'app-agregar',
@@ -27,7 +28,7 @@ export class AgregarComponent {
   IDirector: any[] = [];
   movieForm: FormGroup;
   private _snackBar = inject(MatSnackBar);
-  constructor(private fb: FormBuilder, private movieServices: MovieService, private dialog: MatDialog,) {
+  constructor(private fb: FormBuilder, private movieServices: MovieService, private dialog: MatDialog,private dialogRef: MatDialogRef<AgregarComponent>) {
     this.movieForm = this.fb.group({
       name: ['', Validators.required],
       release_year: ['', Validators.required],
@@ -54,7 +55,7 @@ export class AgregarComponent {
   guardarMovie() {
     if (this.IDirector.length > 0) {
       this.movieServices.HttpPost("https://localhost:7095/api/Movies/register-movies", this.movieForm.value).subscribe((data) => {
-        this.closeDialog();
+        this.dialogRef.close(data); 
       });
     }else{
       this.openSnackBar('No hay Registro de Directores Agregue e intente de nuevo', 'Salir');
